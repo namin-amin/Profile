@@ -38,13 +38,19 @@
     height: 100px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 900px) {
     section {
       margin: 2rem;
       height: 30%;
       width: 90%;
     }
 
+    p:last-child {
+      display: none;
+    }
+  }
+
+  @media (max-width: 525px) {
     p {
       display: none;
     }

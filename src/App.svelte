@@ -127,6 +127,7 @@
     color: #292f36;
     font-size: 1rem;
     font-weight: bold 400;
+    box-sizing: border-box;
   }
 
   nav {
@@ -198,11 +199,7 @@
     font-weight: 400;
     font-size: 3rem;
   }
-  @media (max-width: 500px) {
-    .content {
-      flex-direction: column;
-    }
-
+  @media (max-width: 700px) {
     .heading {
       font-size: 3rem;
     }
@@ -213,6 +210,23 @@
 
     .subtitle {
       font-size: 1.4rem;
+    }
+  }
+
+  @media (max-width: 800px) {
+    .content {
+      flex-direction: column;
+    }
+  }
+
+  @media (min-width: 850px) and (max-height: 500px) {
+    .heading {
+      font-size: 3rem;
+      margin: 0;
+    }
+    .subtitle {
+      font-size: 1.5rem;
+      margin: 0;
     }
   }
 

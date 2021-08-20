@@ -108,13 +108,18 @@
     border-radius: 50px;
   }
 
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     .about {
       width: 80vw;
     }
     .container1,
     .container2 {
       justify-content: space-between;
+    }
+
+    img {
+      width: 50%;
+      height: 50%;
     }
   }
 </style>

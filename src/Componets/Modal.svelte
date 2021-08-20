@@ -90,6 +90,7 @@
     justify-content: space-around;
     align-items: center;
     color: #292f36;
+    box-sizing: border-box;
   }
 
   img {
@@ -101,7 +102,14 @@
     display: none;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 1025px) {
+    img {
+      width: 90%;
+      height: 70%;
+    }
+  }
+
+  @media (max-width: 770px) {
     .modal {
       flex-direction: column;
       height: 100vh;
