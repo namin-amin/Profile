@@ -54,7 +54,7 @@
     <div title="View Resume">
       <h3>Resume/CV</h3>
       <a
-        href="https://drive.google.com/file/d/1nBoT7CwQtnc4BOWbiK_MAK0ospbxUk2z/view?usp=sharing
+        href="https://drive.google.com/file/d/1kQu0_ZnAfTjqrmuiNJSVTr3IueUcnQAb/view?usp=sharing
       "
         target="_blank"
       >
