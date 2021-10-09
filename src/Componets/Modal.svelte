@@ -38,9 +38,6 @@
           </p>
         </div>
         <div class="closebutton" on:click>Back</div>
-        <div style="padding:0 2rem 0 2rem;">
-          <img src="industry.gif" alt="" />
-        </div>
       </div>
     {/if}
 
@@ -54,9 +51,6 @@
           <p>Electron Apps</p>
           <p>Python</p>
           <p>C# .NET beginner</p>
-        </div>
-        <div style="padding:0 2rem 0 2rem;">
-          <img src="laptop.png" alt="" />
         </div>
         <div class="closebutton" on:click>Back</div>
       </div>
@@ -93,20 +87,8 @@
     box-sizing: border-box;
   }
 
-  img {
-    width: 50vh;
-    height: 100%;
-  }
-
   .closebutton {
     display: none;
-  }
-
-  @media (max-width: 1025px) {
-    img {
-      width: 90%;
-      height: 70%;
-    }
   }
 
   @media (max-width: 770px) {
@@ -125,9 +107,6 @@
       width: 50px;
       display: inline;
       border-radius: 5px;
-    }
-    img {
-      display: none;
     }
   }
 
