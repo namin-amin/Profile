@@ -45,12 +45,27 @@
     {#if skilltype === "dev"}
       <div class="modal modal2">
         <div style="padding:0 2rem 0 2rem; box-sizing: border-box; ">
+          <!-- Experience block -->
+          <h2>Experience</h2>
+          <p>
+            Programming Engineer @<a href="https://www.winmansoftware.com/"
+              >Winman Software
+            </a>
+          </p>
+          <!-- Skills block -->
           <h2>Skills</h2>
-          <p>Web-development</p>
-          <p>React, nodejs , Svelte, Nestjs</p>
-          <p>Electron Apps</p>
+          <p>.NET Framework & .NET</p>
+          <p>React, nodejs , Svelte, Nestjs, ASP.Net</p>
+          <p>Electronjs</p>
           <p>Python</p>
-          <p>C# .NET beginner</p>
+
+          <h2>Certifications</h2>
+          <p>
+            <a
+              href="https://www.udemy.com/certificate/UC-4480aeb2-1a93-427c-822e-44d5a83ebd32/"
+              >Web Development Bootcamp</a
+            >
+          </p>
         </div>
         <div class="closebutton" on:click>Back</div>
       </div>

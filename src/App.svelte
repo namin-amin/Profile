@@ -9,7 +9,7 @@
   let link: string = "intro";
   let scrollposition;
   let screenlenth = window.innerHeight;
-  let subtitle = "Iam an Aeronautical Engineer";
+  let subtitle = "Software Developer 🤓";
 
   onMount(() => {
     document.addEventListener("scroll", (eve) => {
@@ -22,10 +22,10 @@
 
   //function changing subtitle
   const changesubtitle = () => {
-    if (subtitle === "Iam an Aeronautical Engineer") {
-      subtitle = "And a Web Developer for Fun 😉";
+    if (subtitle === "Software Developer 🤓") {
+      subtitle = "And An Aero Engineer 😉";
     } else {
-      subtitle = "Iam an Aeronautical Engineer";
+      subtitle = "Software Developer 🤓";
     }
   };
 
@@ -93,8 +93,8 @@
       data-aos-once="false"
       data-aos-anchor-placement="top-center"
     >
-      <AeroSkill />
       <WebSkill />
+      <AeroSkill />
     </div>
   </div>
 
