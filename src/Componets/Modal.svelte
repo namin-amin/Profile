@@ -54,8 +54,8 @@
           </p>
           <!-- Skills block -->
           <h2>Skills</h2>
-          <p>.NET Framework & .NET</p>
-          <p>React, nodejs , Svelte, Nestjs, ASP.Net</p>
+          <p>.NET Framework & .NET core</p>
+          <p>React, nodejs , Svelte, Nestjs, ASP.NET</p>
           <p>Electronjs</p>
           <p>Python</p>
 

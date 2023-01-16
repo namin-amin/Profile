@@ -12,7 +12,7 @@
     />
     <h1>Development</h1>
     <p>Started with DAQ Development</p>
-    <p>Fluent in Web-technologies Like nodejs and React</p>
+    <p>Feel like home with .NET</p>
   </div>
 </section>
 
