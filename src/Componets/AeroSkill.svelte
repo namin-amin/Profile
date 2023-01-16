@@ -19,7 +19,7 @@
 <style>
   section {
     width: 50%;
-    height: auto;
+    height: 18rem;
     border: solid 2px white;
     border-radius: 10px;
     margin: 5rem;

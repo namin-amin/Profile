@@ -82,10 +82,13 @@
 
   <!--Skills page-->
   <div class="page" id="skills">
+    <div class="skillhead">
+      <h1 class="skillhead">Things Iam good at 💻💻🚀</h1>
+    </div>
     <div
-      class="content"
+      class="skillcontent"
       data-aos="fade"
-      data-aos-offset="200"
+      data-aos-offset="100"
       data-aos-delay="50"
       data-aos-duration="800"
       data-aos-easing="ease-in-out"
@@ -128,6 +131,28 @@
     font-size: 1rem;
     font-weight: bold 400;
     box-sizing: border-box;
+  }
+
+  .skillhead {
+    color: white;
+    text-align: center;
+  }
+
+  .skillhead {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: aqua; */
+    margin: 0;
+    font-size: 3rem;
+    height: 10rem;
+  }
+  .skillcontent {
+    text-align: center;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   nav {
@@ -216,6 +241,12 @@
   @media (max-width: 800px) {
     .content {
       flex-direction: column;
+    }
+    .skillcontent {
+      flex-direction: column;
+    }
+    .skillhead {
+      font-size: 1.75rem;
     }
   }
 
