@@ -86,6 +86,7 @@
     font-size: 1rem;
     font-weight: bold 400;
     box-sizing: border-box;
+    background-color: #f7fff7;
   }
 
   nav {
@@ -130,6 +131,7 @@
     body {
       display: flex;
       flex-wrap: wrap;
+      width: 100%;
     }
   }
 

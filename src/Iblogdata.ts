@@ -3,4 +3,5 @@ export class Iblogdata {
     title: string;
     details: string;
     file: string;
+    thumbimg: string;
 }

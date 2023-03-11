@@ -9,7 +9,7 @@
 </script>
 
 <div class="card" on:click={gotoBlogDetail}>
-  <img src="data/1/blazlogo.png" alt="" />
+  <img src={blog.thumbimg} alt="thumbnail" />
   <div class="lisitem">
     <h2>
       {blog.title}
