@@ -1,24 +1,11 @@
 <script lang="ts">
   import AOS from "aos"; //scroll animation library
   import "aos/dist/aos.css";
-  import { onMount } from "svelte";
-  import Router, { location } from "svelte-spa-router";
-  import { routes } from "./routes/routes";
-
+  import About from "../Componets/About.svelte";
+  import AeroSkill from "../Componets/AeroSkill.svelte";
+  import WebSkill from "../Componets/WebSkill.svelte";
   AOS.init();
-  let link: string = "intro";
-  let scrollposition;
-  let screenlenth = window.innerHeight;
   let subtitle = "Software Developer 🤓";
-
-  onMount(() => {
-    document.addEventListener("scroll", (eve) => {
-      //event to listen to scroll event for nav button active styles
-      scrollposition = window.scrollY;
-    });
-
-    setInterval(changesubtitle, 4000); //to change subtitle
-  });
 
   //function changing subtitle
   const changesubtitle = () => {
@@ -28,38 +15,72 @@
       subtitle = "Software Developer 🤓";
     }
   };
-
-  //nav bar active styles logic
-  $: if ($location.endsWith("blog")) {
-    link = "blog";
-  } else if (scrollposition < screenlenth) {
-    link = "intro";
-  } else if (
-    scrollposition >= screenlenth &&
-    scrollposition < screenlenth * 2
-  ) {
-    link = "skills";
-  } else if (scrollposition === screenlenth * 2) {
-    link = "contact";
-  }
 </script>
 
-<!--navbar start-->
-<nav>
-  <ul class="navbar">
-    <li>
-      <a href="#intro" class="active" class:active={link === "intro"}>Home</a>
-    </li>
-    <li>
-      <a href="#skills" class:active-skills={link === "skills"}>Skills</a>
-    </li>
-    <li><a href="#contact" class:active={link === "contact"}>Contact</a></li>
-    <li><a href="#/blog/" class:active={link === "blog"}>Blog</a></li>
-  </ul>
-</nav>
-<body>
-  <Router {routes} />
-</body>
+<!--Start of the pages-->
+<main class="container">
+  <!-- Introoduction page -->
+  <div class="page" id="intro">
+    <div
+      class="content"
+      data-aos="slide-down"
+      data-aos-offset="200"
+      data-aos-delay="70"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      style="flex-direction: column;"
+    >
+      <h1 class="heading">Navaneesh Amin</h1>
+      <div style="display: flex;">
+        <h2 class="subtitle">
+          {subtitle}
+        </h2>
+      </div>
+    </div>
+  </div>
+
+  <!--Skills page-->
+  <div class="page" id="skills">
+    <div class="skillhead">
+      <h1 class="skillhead">Things Iam good at 💻💻🚀</h1>
+    </div>
+    <div
+      class="skillcontent"
+      data-aos="fade"
+      data-aos-offset="100"
+      data-aos-delay="50"
+      data-aos-duration="800"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+    >
+      <WebSkill />
+      <AeroSkill />
+    </div>
+  </div>
+
+  <!--Contacts page-->
+  <div class="page" id="contact">
+    <div
+      class="content"
+      data-aos="fade"
+      data-aos-offset="200"
+      data-aos-delay="50"
+      data-aos-duration="1000"
+      data-aos-easing="ease-in-out"
+      data-aos-mirror="true"
+      data-aos-once="false"
+      data-aos-anchor-placement="top-center"
+      data-aos-id="contact-in"
+    >
+      <About />
+    </div>
+  </div>
+</main>
 
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Indie+Flower&display=swap");
