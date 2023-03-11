@@ -2,14 +2,15 @@
   import AOS from "aos"; //scroll animation library
   import "aos/dist/aos.css";
   import { onMount } from "svelte";
-  import Router, { location } from "svelte-spa-router";
+  import Router, { location, link, replace } from "svelte-spa-router";
   import { routes } from "./routes/routes";
 
   AOS.init();
-  let link: string = "intro";
+  let navLink: string = "intro";
   let scrollposition;
   let screenlenth = window.innerHeight;
   let subtitle = "Software Developer 🤓";
+  let navcolor = " background-color: #f7fff7;";
 
   onMount(() => {
     document.addEventListener("scroll", (eve) => {
@@ -30,33 +31,46 @@
   };
 
   //nav bar active styles logic
-  $: if ($location.endsWith("blog")) {
-    link = "blog";
+  $: if ($location.endsWith("blog/") || $location.includes("/blogdetail", 0)) {
+    navLink = "blog";
+    if (!$location.includes("/blogdetail", 0)) {
+      navcolor = "background-color: #f7fff7;";
+    } else {
+      navcolor = "";
+    }
   } else if (scrollposition < screenlenth) {
-    link = "intro";
+    navLink = "intro";
   } else if (
     scrollposition >= screenlenth &&
     scrollposition < screenlenth * 2
   ) {
-    link = "skills";
+    navLink = "skills";
   } else if (scrollposition === screenlenth * 2) {
-    link = "contact";
+    navLink = "contact";
+  }
+
+  $: if (navLink !== "blog") {
+    navcolor = "";
   }
 </script>
 
 <!--navbar start-->
-<nav>
+<nav style={navcolor}>
   <ul class="navbar">
     <li>
-      <a href="#intro" class="active" class:active={link === "intro"}>Home</a>
+      <a href="#intro" class="active" class:active={navLink === "intro"}>Home</a
+      >
     </li>
     <li>
-      <a href="#skills" class:active-skills={link === "skills"}>Skills</a>
+      <a href="#skills" class:active-skills={navLink === "skills"}>Skills</a>
     </li>
-    <li><a href="#contact" class:active={link === "contact"}>Contact</a></li>
-    <li><a href="#/blog/" class:active={link === "blog"}>Blog</a></li>
+    <li><a href="#contact" class:active={navLink === "contact"}>Contact</a></li>
+    <li>
+      <a href="/blog/" class:active={navLink === "blog"} use:link>Blog</a>
+    </li>
   </ul>
 </nav>
+
 <body>
   <Router {routes} />
 </body>
@@ -72,28 +86,6 @@
     font-size: 1rem;
     font-weight: bold 400;
     box-sizing: border-box;
-  }
-
-  .skillhead {
-    color: white;
-    text-align: center;
-  }
-
-  .skillhead {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* background-color: aqua; */
-    margin: 0;
-    font-size: 3rem;
-    height: 10rem;
-  }
-  .skillcontent {
-    text-align: center;
-    height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   nav {
@@ -130,75 +122,14 @@
     color: cadetblue;
   }
 
-  .page {
-    height: 100vh;
-    padding: 0 5rem 0 5rem;
-  }
-
-  .content {
-    text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  #intro {
-    background-color: #f7fff7;
-  }
-
-  #skills {
-    background-color: #292f36;
-  }
-
-  #contact {
-    background-color: #f7fff7;
-  }
-  .heading {
-    /* font-family: "Indie Flower", cursive; */
-    font-weight: bold 800;
-    font-size: 6rem;
-  }
-
-  .subtitle {
-    /* font-family: "Indie Flower", cursive; */
-    font-weight: 400;
-    font-size: 3rem;
-  }
   @media (max-width: 700px) {
-    .heading {
-      font-size: 3rem;
-    }
-
     .navbar {
       display: none;
     }
 
-    .subtitle {
-      font-size: 1.4rem;
-    }
-  }
-
-  @media (max-width: 800px) {
-    .content {
-      flex-direction: column;
-    }
-    .skillcontent {
-      flex-direction: column;
-    }
-    .skillhead {
-      font-size: 1.75rem;
-    }
-  }
-
-  @media (min-width: 850px) and (max-height: 500px) {
-    .heading {
-      font-size: 3rem;
-      margin: 0;
-    }
-    .subtitle {
-      font-size: 1.5rem;
-      margin: 0;
+    body {
+      display: flex;
+      flex-wrap: wrap;
     }
   }
 

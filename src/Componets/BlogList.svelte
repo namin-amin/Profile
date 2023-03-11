@@ -1,9 +1,14 @@
 <script lang="ts">
+  import { push } from "svelte-spa-router";
   import type { Iblogdata } from "../Iblogdata";
   export let blog: Iblogdata;
+
+  const gotoBlogDetail = () => {
+    push("/blogdetail?file=" + blog.file);
+  };
 </script>
 
-<div class="card">
+<div class="card" on:click={gotoBlogDetail}>
   <img src="data/1/blazlogo.png" alt="" />
   <div class="lisitem">
     <h2>
@@ -27,18 +32,15 @@
 
   img {
     width: 5rem;
-    height: 8rem;
-    aspect-ratio: calc(16, 9);
+    height: 100%;
+    object-fit: cover;
   }
 
   .card {
-    margin-left: 4rem;
-    margin-right: 4rem;
-    margin-bottom: 2rem;
+    margin: 0 4rem 2rem 4rem;
     width: 25rem;
     height: 15rem;
     justify-content: center;
-    flex-direction: column;
     padding: 2rem;
     align-items: center;
     flex-direction: row;
@@ -46,6 +48,22 @@
     border: solid 1px lightgray;
     transition: all 0.2s;
   }
+
+  @media (max-width: 600px) {
+    .card {
+      flex-direction: column;
+      height: auto;
+      width: auto;
+      margin: 1rem 1rem 1.5rem 1rem;
+    }
+
+    img {
+      width: 100%;
+      height: 5rem;
+      object-fit: cover;
+    }
+  }
+
   .card:hover {
     -webkit-box-shadow: 5px 10px 22px -6px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 5px 10px 22px -6px rgba(0, 0, 0, 0.75);

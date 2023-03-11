@@ -1,7 +1,12 @@
 <script lang="ts">
+  import { push } from "svelte-spa-router";
   import Attributes from "./Attributes.svelte";
 
   let showAtribute = false;
+
+  const gotoBlog = () => {
+    push("/blog/");
+  };
 </script>
 
 <div class="about">
@@ -35,9 +40,24 @@
       >
     </div>
   </div>
-  <div title="thi is me 🤓">
-    <h3>Contact me</h3>
-    <img src="dp.jpeg" alt="profile" class="profilepic" />
+  <div title="Read Stuff">
+    <h3>Blog</h3>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="70"
+      height="70"
+      fill="currentColor"
+      class="bi bi-journal"
+      viewBox="0 0 16 16"
+      on:click={gotoBlog}
+    >
+      <path
+        d="M3 0h10a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-1h1v1a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v1H1V2a2 2 0 0 1 2-2z"
+      />
+      <path
+        d="M1 5v-.5a.5.5 0 0 1 1 0V5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0V8h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1zm0 3v-.5a.5.5 0 0 1 1 0v.5h.5a.5.5 0 0 1 0 1h-2a.5.5 0 0 1 0-1H1z"
+      />
+    </svg>
   </div>
   <div class="container2">
     <div title="mail me at:  navaneesh185@gmail.com">

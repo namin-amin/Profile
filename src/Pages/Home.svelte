@@ -117,40 +117,6 @@
     align-items: center;
   }
 
-  nav {
-    width: 100vw;
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    left: 0;
-    height: 2rem;
-  }
-
-  .navbar {
-    display: flex;
-    margin: 0;
-    height: 100%;
-    padding: 5px;
-    justify-content: center;
-    align-items: center;
-  }
-
-  li {
-    margin: 5rem;
-    list-style: none;
-  }
-
-  a {
-    text-decoration: none;
-    color: darkgray;
-    transition: all 0.3s ease-in-out;
-    font-weight: bold;
-  }
-
-  a:hover {
-    color: cadetblue;
-  }
-
   .page {
     height: 100vh;
     padding: 0 5rem 0 5rem;
@@ -191,10 +157,6 @@
       font-size: 3rem;
     }
 
-    .navbar {
-      display: none;
-    }
-
     .subtitle {
       font-size: 1.4rem;
     }
@@ -221,17 +183,5 @@
       font-size: 1.5rem;
       margin: 0;
     }
-  }
-
-  .active {
-    font-size: bold;
-    text-decoration: underline;
-    color: black;
-  }
-
-  .active-skills {
-    font-size: bold;
-    text-decoration: underline;
-    color: white;
   }
 </style>

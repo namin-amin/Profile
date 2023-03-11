@@ -6,7 +6,7 @@ JS interopbility is quite great when getting into nitty gritty Browser specific 
 
 Recently i wanted to tryout [pocketbase](https://pocketbase.io/) which is wonderfull BAF(backend as a file)😉 with Blazor.
 
-![pocketbase](data/1/pblogo.svg) ![pocketbase](data/1/blazlogo.png)
+<img src="data/1/pblogo.svg" alt="drawing" width="200"/> <img src="data/1/blazlogo.png" alt="drawing" width="200"/>
 
 So as usual i went to **nuget** and found one package.
 But when trying to implement _Realtime_ Feature of pocketbase it seemed not to work in .Net Blazor.It was working fine in winforms ,.NET MAUI but not in blazor.
@@ -28,6 +28,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Http;
 
 var httpmessage =  new HttpRequestMessage();
 httpmessage.SetBrowserResponseStreamingEnabled(true);
+
 ```
 
 using the above code worked it solved the realtime issue in my cleint sdk.
