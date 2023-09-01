@@ -59,7 +59,6 @@
       data-aos-anchor-placement="top-center"
     >
       <WebSkill />
-      <AeroSkill />
     </div>
   </div>
 

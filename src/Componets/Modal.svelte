@@ -53,19 +53,16 @@
             </a>
           </p>
           <!-- Skills block -->
-          <h2>Skills</h2>
-          <p>.NET Framework & .NET core</p>
-          <p>React, nodejs , Svelte, Nestjs, ASP.NET</p>
-          <p>Electronjs</p>
-          <p>Python</p>
+          <h2>Backend</h2>
+          <p>ASP .NET core</p>
+          <p>Golang</p>
+          <p>express js</p>
 
-          <h2>Certifications</h2>
-          <p>
-            <a
-              href="https://www.udemy.com/certificate/UC-4480aeb2-1a93-427c-822e-44d5a83ebd32/"
-              >Web Development Bootcamp</a
-            >
-          </p>
+          <h2>Frontend</h2>
+          <p>React & Nextjs</p>
+          <p>Svelte & Sveltekit</p>
+          <p>.Asp .Net Blazor</p>
+
         </div>
         <div class="closebutton" on:click>Back</div>
       </div>
