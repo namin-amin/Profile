@@ -23,7 +23,7 @@
 
 <style>
   .content {
-    padding: 2rem;
+    padding: 4rem;
     background-color: #708192;
     color: white;
   }
