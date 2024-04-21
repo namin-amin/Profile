@@ -38,8 +38,8 @@
 
   .card {
     margin: 0 4rem 2rem 4rem;
-    width: 25rem;
-    height: 15rem;
+    width: 23rem;
+    height: 16rem;
     justify-content: center;
     padding: 2rem;
     align-items: center;
