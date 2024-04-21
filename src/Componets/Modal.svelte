@@ -6,41 +6,6 @@
 
 {#if showmodal}
   <div class="backdrop" on:click|self transition:fade>
-    <!--Aero skills-->
-    {#if skilltype === "aero"}
-      <div class="modal">
-        <div style="padding:0 2rem 0 2rem; box-sizing: border-box; ">
-          <h2>Expeience</h2>
-          <p>
-            Production Enginner at <a
-              href="https://www.aequs.com/aerospace/"
-              target="_blank">Aequs Aerospace Pvt Ltd (2018-2020)</a
-            >
-          </p>
-          <br />
-          <h2>Skills</h2>
-          <p>Handson experience with CNC milling</p>
-          <p>Assembly of Aerospace Comonents</p>
-          <p>CAE/CAM</p>
-          <br />
-          <h2>Certifications</h2>
-          <p>
-            3Dexperince from <a
-              href="https://www.linkedin.com/company/aerocoe/about/"
-              target="_blank">Centre of Excellence in Aerospace & Defence</a
-            >
-          </p>
-          <p>
-            <a
-              href="https://drive.google.com/file/d/1sKLa5Iky5W_3LTVi0G-bczrlhuUnzElP/view?usp=sharing"
-              target="_blank">introduction to Six-Sigma Concepts</a
-            >
-          </p>
-        </div>
-        <div class="closebutton" on:click>Back</div>
-      </div>
-    {/if}
-
     <!--Dev skills-->
     {#if skilltype === "dev"}
       <div class="modal modal2">
@@ -48,13 +13,14 @@
           <!-- Experience block -->
           <h2>Experience</h2>
           <p>
-            Programming Engineer @<a href="https://www.winmansoftware.com/"
-              >Winman Software
+            Software Developer @<a target="_blank" href="https://global.eg.dk/"
+              >EGDK 
             </a>
           </p>
           <!-- Skills block -->
           <h2>Backend</h2>
           <p>ASP .NET core</p>
+          <p>Microsoft Sql Server</p>
           <p>Golang</p>
           <p>express js</p>
 
