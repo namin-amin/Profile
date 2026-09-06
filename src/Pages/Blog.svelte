@@ -2,44 +2,22 @@
   import BlogList from "../Componets/BlogList.svelte";
   import type { Iblogdata } from "../Iblogdata";
   import { onMount } from "svelte";
-  import { replace } from "svelte-spa-router";
-  let blogs: Iblogdata[] = null;
-  let textres = "";
-
+  let blogs: Iblogdata[] | null = null;
+  const baseUrl = import.meta.env.BASE_URL;
   onMount(() => {
-    fetch("data/Blogs.json").then(async (res) => {
-      textres = await res.text();
-      console.log(textres);
-
-      blogs = JSON.parse(textres);
+    fetch(`${baseUrl}data/Blogs.json`).then(async (res) => {
+      blogs = await res.json();
     });
   });
 
-  const gohome = () => {
-    replace("/");
-  };
 </script>
 
-<div class="homebtn" title="Go Home">
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    width="16"
-    height="16"
-    fill="currentColor"
-    class="bi bi-house-door"
-    viewBox="0 0 16 16"
-    on:click={gohome}
-  >
-    <path
-      d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146ZM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5Z"
-    />
-  </svg>
-</div>
-
 <div class="container">
-  <h1 style="font-size: 3rem;align-self: center;font-weight: bold;">
-    My Blogs
-  </h1>
+  <header class="page-heading">
+    <p class="eyebrow">03 / Field notes</p>
+    <h1>Things I’m figuring out.</h1>
+    <p class="intro">Short notes on software, systems, and the details that make both more useful.</p>
+  </header>
 
   <div class="blogcards">
     {#if blogs !== null}
@@ -52,51 +30,17 @@
 
 <style>
   .container {
-    padding-left: 2rem;
-    padding-right: 2rem;
-    display: flex;
-    flex-direction: column;
-    background-color: #f7fff7;
+    min-height: 100vh;
+    padding: 9rem max(1.5rem, calc((100vw - 1180px) / 2)) 5rem;
+    background: #f5f0e8;
   }
-
-  .blogcards {
-    display: flex;
-    margin-top: 5rem;
-    widows: 100%;
-    align-items: center;
-    justify-content: start;
-    flex-wrap: wrap;
-    overflow-wrap: normal;
-  }
-  .homebtn {
-    visibility: hidden;
-  }
-
-  @media (max-width: 600px) {
-    .container {
-      scroll-behavior: smooth;
-      overflow: hidden;
-      justify-content: center;
-      align-items: center;
-      margin-top: 0;
-    }
-    .blogcards {
-      margin-top: 0.5rem;
-    }
-    .homebtn {
-      visibility: visible;
-      position: fixed;
-      top: 1.5rem;
-      left: 1rem;
-      z-index: 100;
-    }
-    svg {
-      width: 2rem;
-      height: 2rem;
-      color: gray;
-    }
-    svg:hover {
-      color: darkgray;
-    }
+  .page-heading { max-width: 700px; margin-bottom: 4rem; }
+  .eyebrow { color: #e56b4b; font: 500 0.72rem "DM Mono", monospace; letter-spacing: 0.08em; text-transform: uppercase; }
+  h1 { margin: 0; color: #18323a; font-size: clamp(3.2rem, 7vw, 6.5rem); line-height: 0.95; letter-spacing: -0.07em; }
+  .intro { max-width: 480px; color: #577078; font-size: 1rem; line-height: 1.7; }
+  .blogcards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 900px; }
+  @media (max-width: 700px) {
+    .container { padding-top: 8rem; }
+    .blogcards { grid-template-columns: 1fr; }
   }
 </style>

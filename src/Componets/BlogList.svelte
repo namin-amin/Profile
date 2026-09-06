@@ -4,69 +4,39 @@
   export let blog: Iblogdata;
 
   const gotoBlogDetail = () => {
-    push("/blogdetail?file=" + blog.file);
+    push("/blogdetail?file=" + encodeURIComponent(blog.file));
   };
 </script>
 
-<div class="card" on:click={gotoBlogDetail}>
-  <img src={blog.thumbimg} alt="thumbnail" />
+<button class="card" type="button" on:click={gotoBlogDetail}>
+  <div class="card-top"><span>NOTE / 0{blog.id}</span><span>↗</span></div>
+  <img src={blog.thumbimg} alt="" />
   <div class="lisitem">
-    <h2>
-      {blog.title}
-    </h2>
-    <h4>
-      {blog.details}
-    </h4>
+    <h2>{blog.title}</h2>
+    <p>{blog.details}</p>
   </div>
-</div>
+</button>
 
 <style>
-  .lisitem {
-    justify-content: center;
-    flex-direction: column;
-    padding: 1rem;
-    align-items: center;
-    display: flex;
-    transition: all 0.2s;
-  }
-
-  img {
-    width: 5rem;
-    height: 100%;
-    object-fit: cover;
-  }
-
   .card {
-    margin: 0 4rem 2rem 4rem;
-    width: 23rem;
-    height: 16rem;
-    justify-content: center;
-    padding: 2rem;
-    align-items: center;
-    flex-direction: row;
+    min-height: 21rem;
+    font: inherit;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    padding: 1.2rem;
     display: flex;
-    border: solid 1px lightgray;
-    transition: all 0.2s;
+    flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid rgba(24, 50, 58, 0.2);
+    border-radius: 1rem;
+    background: #ebe4da;
+    transition: transform 220ms ease, background 220ms ease;
   }
-
-  @media (max-width: 600px) {
-    .card {
-      flex-direction: column;
-      height: auto;
-      width: auto;
-      margin: 1rem 1rem 1.5rem 1rem;
-    }
-
-    img {
-      width: 100%;
-      height: 5rem;
-      object-fit: cover;
-    }
-  }
-
-  .card:hover {
-    -webkit-box-shadow: 5px 10px 22px -6px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 5px 10px 22px -6px rgba(0, 0, 0, 0.75);
-    box-shadow: 5px 10px 22px -6px rgba(0, 0, 0, 0.75);
-  }
+  .card:hover { transform: translateY(-0.35rem); background: #e2d8ca; }
+  .card-top { display: flex; justify-content: space-between; color: #e56b4b; font: 0.65rem "DM Mono", monospace; }
+  img { width: 100%; height: 6rem; object-fit: contain; object-position: left; mix-blend-mode: multiply; }
+  .lisitem { padding-top: 1rem; }
+  h2 { margin: 0 0 0.8rem; color: #18323a; font-size: 1.35rem; letter-spacing: -0.05em; }
+  p { margin: 0; color: #577078; font-size: 0.78rem; line-height: 1.6; }
 </style>
