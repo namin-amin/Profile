@@ -11,7 +11,7 @@
     <a href="mailto:navaneesh185@gmail.com">Email <span>↗</span></a>
     <a href="https://github.com/namin-amin" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
     <a href="https://www.linkedin.com/in/navaneesh-n-amin-1a9660128/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
-    <a href="https://drive.google.com/file/d/1glbKA5bYXqVmK1M8xj7lq9wd-aJWsdoh/view?usp=drive_link" target="_blank" rel="noreferrer">Résumé <span>↗</span></a>
+    <a href="https://drive.google.com/file/d/1K_GW5G9chy2mTArzLAznyB1uL_exh79U/view?usp=sharing" target="_blank" rel="noreferrer">Résumé <span>↗</span></a>
     <a href="/blog/" use:link>Notes <span>↗</span></a>
   </div>
 </div>
