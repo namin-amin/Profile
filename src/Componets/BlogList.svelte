@@ -2,9 +2,12 @@
   import { push } from "svelte-spa-router";
   import type { Iblogdata } from "../Iblogdata";
   export let blog: Iblogdata;
+  const routeBase = import.meta.env.BASE_URL === "/"
+    ? ""
+    : import.meta.env.BASE_URL.replace(/\/$/, "");
 
   const gotoBlogDetail = () => {
-    push("/blogdetail?file=" + encodeURIComponent(blog.file));
+    push(`${routeBase}/blogdetail?file=` + encodeURIComponent(blog.file));
   };
 </script>
 
