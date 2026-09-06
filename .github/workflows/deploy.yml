@@ -34,7 +34,13 @@ jobs:
         run: npm run check
 
       - name: Build
+        env:
+          VITE_BASE_PATH: ${{ vars.VITE_BASE_PATH || format('/{0}/', github.event.repository.name) }}
         run: npm run build:pages
+
+      - name: Add custom domain
+        if: ${{ vars.CUSTOM_DOMAIN != '' }}
+        run: echo "${{ vars.CUSTOM_DOMAIN }}" > dist/CNAME
 
       - name: Add SPA fallback
         run: cp dist/index.html dist/404.html
