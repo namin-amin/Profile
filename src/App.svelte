@@ -3,7 +3,6 @@
   import Router, { location, link } from "svelte-spa-router";
   import { routes } from "./routes/routes";
 
-  const baseUrl = import.meta.env.BASE_URL;
   let navLink = "intro";
   let scrollPosition = 0;
 
@@ -25,12 +24,12 @@
 </script>
 
 <nav aria-label="Main navigation">
-  <a class="wordmark" href={baseUrl} use:link>NA<span>/</span></a>
+  <a class="wordmark" href="/" use:link>NA<span>/</span></a>
   <ul class="navbar">
     <li><a href="#intro" class:active={navLink === "intro"}>Home</a></li>
     <li><a href="#skills" class:active={navLink === "skills"}>Skills</a></li>
     <li><a href="#contact" class:active={navLink === "contact"}>Contact</a></li>
-    <li><a href={`${baseUrl}blog/`} class:active={navLink === "blog"} use:link>Notes</a></li>
+    <li><a href="/blog/" class:active={navLink === "blog"} use:link>Notes</a></li>
   </ul>
 </nav>
 

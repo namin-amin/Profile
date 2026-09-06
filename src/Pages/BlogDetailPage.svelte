@@ -21,7 +21,7 @@
 
 <main class="article-page">
   <header class="article-header">
-    <a class="back-link" href={`${baseUrl}blog/`} use:link>← <span>All notes</span></a>
+    <a class="back-link" href="/blog/" use:link>← <span>All notes</span></a>
     <p class="eyebrow">Field note / Engineering</p>
   </header>
 

@@ -1,7 +1,6 @@
 <script lang="ts">
   import { link } from "svelte-spa-router";
 
-  const baseUrl = import.meta.env.BASE_URL;
 
 </script>
 
@@ -13,7 +12,7 @@
     <a href="https://github.com/namin-amin" target="_blank" rel="noreferrer">GitHub <span>↗</span></a>
     <a href="https://www.linkedin.com/in/navaneesh-n-amin-1a9660128/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a>
     <a href="https://drive.google.com/file/d/1glbKA5bYXqVmK1M8xj7lq9wd-aJWsdoh/view?usp=drive_link" target="_blank" rel="noreferrer">Résumé <span>↗</span></a>
-    <a href={`${baseUrl}blog/`} use:link>Notes <span>↗</span></a>
+    <a href="/blog/" use:link>Notes <span>↗</span></a>
   </div>
 </div>
 <style>
